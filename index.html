@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <!-- <meta name="viewport" content="initial-scale=1.0, width=device-width"> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <title>cosnova</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            position: absolute;
+            overflow-x: hidden;
+        }
+
+        :root {
+            --main-theme-color: #c9003c;
+            --main-background-color: #c4e5dc;
+            --main-border-color: #ea1b4a;
+            --main-font-color: #1d1d1b;
+            --main-gray-color: #ececec;
+
+        }
+
+        @font-face {
+            font-family: FiraSans-Regular;
+            src: url(Fonts/FiraSans-Regular.ttf);
+        }
+
+        @font-face {
+            font-family: Lato-Bold;
+            src: url(Fonts/Lato-Bold.ttf);
+        }
+
+        @font-face {
+            font-family: Lato-Light;
+            src: url(Fonts/Lato-Light.ttf);
+        }
+
+        @font-face {
+            font-family: Lato-Regular;
+            src: url(Fonts/Lato-Regular.ttf);
+        }
+
+        body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        main {
+            /* padding: 0 5.5rem; */
+            font-family: Lato-Regular;
+        }
+
+        footer {}
+
+        .logo-container {
+            text-align: center;
+            padding: 4.5rem;
+        }
+
+        .logo {
+            height: 4.5rem;
+
+        }
+
+        .text-decoration-underline {
+            text-decoration: underline;
+        }
+
+        .theme-color {
+            color: var(--main-theme-color);
+            color: var(--main-theme-color);
+        }
+
+        .header-content {
+            padding: 0 5.5rem;
+        }
+
+        .banner {
+            background-image: linear-gradient(to bottom, rgb(255, 255, 255) 1%, rgba(247, 241, 241, 0.37) 10%, rgba(64, 64, 64, 0) 60%, rgba(255, 255, 255, 1) 80%), url(Images/background.jpg);
+            background-repeat: no-repeat;
+            background-size: contain;
+
+        }
+
+        .banner-header {
+            padding-top: 5rem;
+        }
+
+        .banner-img-container {
+            padding: 0 12rem;
+        }
+
+        .banner-img-container .mt-neg {
+            margin-top: -14rem;
+        }
+
+        .img1 {
+            width: 30%;
+
+        }
+
+        .img2 {
+            width: 35%;
+            margin-left: -5rem;
+            margin-right: 5%;
+
+        }
+
+        .img3 {
+            width: 30%;
+            margin-top: 4rem;
+            margin-right: 0rem;
+        }
+
+        .img4 {
+            width: 9%;
+            margin-left: 2%;
+        }
+
+        .img5 {
+            width: 40%;
+            margin-left: 8%;
+        }
+
+        .img6 {
+            width: 25%;
+            margin-top: 13rem;
+            margin-left: -2.5rem;
+        }
+
+        .img7 {
+            width: 35%;
+            margin-left: 4%;
+            margin-top: 2rem;
+        }
+
+        .img8 {
+            width: 9%;
+        }
+
+        .img9 {
+            width: 50%;
+            margin-top: 5rem;
+
+        }
+
+        .img10 {
+            transform: rotate(270deg);
+            margin-top: -8rem;
+            width: 13%;
+            margin-right: 4rem;
+
+        }
+
+
+        p {
+            margin-bottom: 0.2rem;
+            font-size: 1.5rem;
+        }
+
+        .p-5-rem {
+            padding: 0 5rem;
+        }
+
+        .large-text {
+            font-size: 3rem;
+            font-weight: 100;
+            display: block;
+        }
+
+        .w-35 {
+            width: 35%;
+        }
+
+        .details-container {
+            padding: 3rem 5rem;
+        }
+
+        .details-container .image-container {
+
+            text-align: center;
+            /* vertical-align: middle; */
+            display: flex;
+            /* align-items: center; */
+            justify-content: center;
+            flex-direction: column;
+        }
+    </style>
+
+
+    <style>
+        .timeline-container {
+            background-color: var(--main-background-color);
+            padding: 3rem 5rem;
+
+        }
+
+        .line {
+            width: 100%;
+            background-color: white;
+            content: '';
+            height: 6px;
+            display: flex;
+            flex-wrap: nowrap;
+            margin: 12rem 0;
+        }
+
+        .line-container {
+            position: relative;
+            width: 20%;
+        }
+
+        .line-container img {
+            height: 10rem;
+            width: 10rem;
+            border-radius: 50%;
+        }
+
+        .line-container .label {
+            float: right;
+            width: 30%;
+            margin-top: 20%;
+            font-size: 1.2rem;
+        }
+
+        .line .line-container::after {
+            content: '';
+            position: absolute;
+            width: 1rem;
+            height: 1rem;
+            right: 65%;
+            background-color: #006dbc;
+            /* border: 4px solid #FF9F55; */
+            top: 93%;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .top {
+            margin-top: -13%;
+
+        }
+
+        .bottom {
+            top: -10px;
+            /* margin-top: -13%; */
+
+        }
+
+        .bottom .content {
+            padding-top: 2rem;
+            margin-top: 0rem;
+        }
+
+        .responsibility-container {
+            padding: 3rem;
+            background-color: var(--main-gray-color);
+        }
+
+        .responsibility-container .w-75 {
+            padding-left: 5rem;
+            padding-bottom: 3rem;
+            width: 80%;
+        }
+
+        .product-container {
+            padding: 5rem;
+        }
+
+        .product-container .mark {
+            font-size: 1rem;
+            background-color: white;
+        }
+    </style>
+    <style>
+        @media (max-width: 767.98px) {
+
+            .logo {
+                height: 3.5rem;
+
+            }
+
+            .header-content {
+                padding: 0 2rem;
+            }
+
+            p {
+                font-size: 1.2rem
+            }
+
+            .details-container {
+                padding: 3rem 2rem;
+            }
+
+            .timeline-container {
+
+                padding: 3rem 2rem;
+            }
+
+            .responsibility-container {
+                padding: 3rem 2rem;
+            }
+
+            .responsibility-container .w-75 {
+                width: 100% !important;
+                padding: 0;
+            }
+
+            .product-container {
+                padding: 3rem 2rem;
+            }
+
+            h2 {
+    font-size: 1.2rem;
+}
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img class="w-100" src="./header.png">
+        <div class="logo-container">
+            <img class="logo" src="https://www.cosnova.com/img/cosnova-logo.svg">
+        </div>
+    </header>
+    <main>
+        <div class="header-content">
+            <h2 class="theme-color">
+                cosnova x Plastic for Change
+            </h2>
+            <h1>
+                DANKE FÜR DEIN INTERESSE AM THEMA RECYCLING UND PLASTIK!
+            </h1>
+            <h2>
+                cosnova fördert Recycling von Plastikmüll
+            </h2>
+        </div>
+
+        <div class="banner text-center">
+            <div class="banner-header">
+                <p>
+                    Wahrscheinlich bist Du über
+                </p>
+                <p>
+                    unsere neue<span class="font-weight-bold">,Sisterlove'-Kollektion</span>, die <span
+                        class="font-weight-bold">Limited Edition TANsation</span> unserer Marken
+                </p>
+                <p>
+                    CATRICE und essence auf diese Seite gestoßen.
+                </p>
+            </div>
+            <div class="banner-img-container">
+                <div>
+                    <img class="img img1" src="Images/sunshine.png">
+                    <img class="img2" src="Images/image--005.png">
+                    <img class="img3" src="Images/image--008.png">
+
+                </div>
+                <div class="d-flex mt-neg">
+                    <div class="w-50 pl-5">
+                        <img class="img4" src="Images/image--039.png">
+                        <img class="img5" src="Images/image--017.png">
+                        <img class="img6" src="Images/image--043.png">
+                    </div>
+                    <div class="w-50">
+                        <img class="img7" src="Images/image--045.png">
+                        <img class="img8" src="Images/image--047.png">
+                        <img class="img9" src="Images/pallet.png">
+                        <img class="img10" class="d-block" src="Images/image--049.png">
+
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+            <img class="w-100" src="Images/tansation.png">
+        </div>
+        <div class="row details-container">
+            <div class="col-lg-8">
+                <p>Im Rahmen dieser Limited Edition „TANsation“ unterstützt cosnova,
+                    das Unternehmen hinter<span class="text-decoration-underline"> essence </span>und
+                    <span class="text-decoration-underline"> CATRICE </span>, die Organisation <span
+                        class="text-decoration-underline font-weight-bold">Plastics For Change </span>
+                    mit einer <span class="font-weight-bold">Spende über 35.000 US-Dollar. </span>Seit Anfang 2020 baut
+                    Plastics For Change mit
+                    diesem Geld zwei
+                    <span class="font-weight-bold">Sammelzentren für Plastikmüll </span> in Indien aus.
+                    Ziel der Zusammenarbeit
+                    ist es, achtlos entsorgtes, aber noch<span class="font-weight-bold"> nutzbares Plastik zu
+                        recyceln</span>
+                    und
+                    als sogenanntes Rezyklat weiterzuverwenden.
+                    Die Zusammenarbeit mit Plastics For Change liegt cosnova besonders
+                    am Herzen, da die Kooperation nicht nur einen wichtigen Beitrag zum
+                    Umweltschutz leistet, sondern den indischen Arbeiterinnen und Arbeitern
+                    auch eine nachhaltige Existenzgrundlage bietet.
+
+                </p>
+            </div>
+            <div class="col-lg-4 text-center image-container">
+                <h4 class="d-block text-left">
+                    Spende über
+                </h4>
+                <h6 class="large-text">
+                    35.000 US$
+                </h6>
+                <div class="d-flex justify-content-center">
+                    <img class="w-35" src="Images/arrow.png">
+                    <img class="w-35" src="Images/chnage.png">
+                </div>
+
+                <div>
+
+                </div>
+            </div>
+
+
+        </div>
+        <section class="timeline-container p-5-rem">
+            <h3>
+                RECYCLING PROCESS
+            </h3>
+            <div class="line d-none d-lg-flex d-xl-flex
+            ">
+                <div class="line-container top">
+                    <div class="content">
+                        <img src="Images/image--056.jpg" />
+                        <span class="label">COLLECTION</span>
+                    </div>
+
+                </div>
+                <div class="line-container bottom">
+                    <div class="content">
+                        <img src="Images/image--060.jpg" />
+                        <span class="label">SEGREGATION</span>
+                    </div>
+                </div>
+                <div class="line-container top">
+                    <div class="content">
+                        <img src="Images/image--057.jpg" />
+                        <span class="label">LABEL
+                            REMOVING</span>
+                    </div>
+
+                </div>
+                <div class="line-container bottom">
+                    <div class="content">
+                        <img src="Images/image--059.jpg" />
+                        <span class="label">QUALITY
+                            CHECKS</span>
+                    </div>
+                </div>
+                <div class="line-container top">
+                    <div class="content">
+                        <img src="Images/image--058.jpg" />
+                        <span class="label">BALING &
+                            DISPATCH</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <section class="responsibility-container">
+            <div class="w-75">
+                <p>
+                    Als Kosmetikunternehmen übernehmen wir Verantwortung, denn unser wunderschöner
+                    Planet und die Menschen, die auf ihm Leben, liegen uns sehr am Herzen. Darum möchten
+                    wir <span class="font-weight-bold">Ressourcen schonen, die Umwelt schützen und zur Reduktion der
+                        Müllberge beitragen. </span>
+                </p>
+            </div>
+            <img class="w-100" src="Images/res.png">
+        </section>
+        <section class="row product-container">
+            <div class="col-lg-8">
+                <p>
+                    Übrigens: Auch bei der Herstellung des TANsation-Packagings von
+                    <span class="text-decoration-underline">essence</span> und <span
+                        class="text-decoration-underline">CATRICE</span> wurde deutlich weniger Neu-Plastik verwendet,
+                    so kommt z.B. die Verpackung des <span class="text-decoration-underline">
+                        so kommt z.B. die Verpackung des CATRICE Bronzing Babe Of The Dunes
+                        Maxi Baked Bronzing Powders Face & Body
+                        so kommt z.B. die Verpackung des </span> mit 95 Prozent weniger
+                    „Virgin Plastics“ aus.*
+                </p>
+            </div>
+            <div class="col-lg-4">
+                <img class="w-100" src="Images/bronz.png">
+            </div>
+            <p class="mark">
+                * im Vergleich zu derselben Verpackung, wenn sie vollständig aus Plastik besteht.
+            </p>
+        </section>
+    </main>
+    <footer>
+        <img class="w-100" src="./footer.png">
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
