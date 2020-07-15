@@ -406,4 +406,30 @@ p {
         top: 0;
         right: 0;
     }
+    .line {
+        width: 100%;
+        margin: 35% 0%;
+    }
+    .top {
+        margin-top: -20%;
+    }
+    .line-container {
+       
+        width: 20%;
+    }
+    .line-container img{
+        display: none;
+    }
+    .line-container .content{
+        margin-left: -25%;
+    }
+    .line-container .label {
+        float: none;
+        width: 55%;
+        font-size: 0.8rem;
+    }
+    .bottom .content {
+        padding-top: 1.5rem;
+    }
+
 }
